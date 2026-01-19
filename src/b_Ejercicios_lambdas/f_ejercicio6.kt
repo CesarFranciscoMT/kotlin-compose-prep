@@ -14,6 +14,8 @@ package b_Ejercicios_lambdas
 
 fun <T, K> agruparPor(lista: List<T>, obtenerClave: (T) -> K): Map<K, List<T>> {
     // Tu código aquí
+    println()
+    println()
 }
 
 fun main() {
