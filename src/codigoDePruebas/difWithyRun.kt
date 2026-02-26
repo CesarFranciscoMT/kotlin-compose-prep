@@ -1,6 +1,5 @@
 package codigoDePruebas
-
-data class Producto(var nombre: String = "", var precio: Double = 0.0)
+private data class Producto(var nombre: String = "", var precio: Double = 0.0)
 
 fun main() {
     val producto = Producto()

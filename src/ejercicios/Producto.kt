@@ -17,7 +17,7 @@ Después, en la función main:
 
 // Datos para usar:
 
-data class Producto(val nombre: String, val precio: Double, val enStock: Boolean) {
+private data class Producto(val nombre: String, val precio: Double, val enStock: Boolean) {
 
 }
 

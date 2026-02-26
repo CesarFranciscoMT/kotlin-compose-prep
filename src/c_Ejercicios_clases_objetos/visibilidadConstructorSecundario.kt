@@ -1,6 +1,6 @@
 package c_Ejercicios_clases_objetos
 
-class Producto(val nombre: String, val precio: Double) {
+private class Producto(val nombre: String, val precio: Double) {
 
     // Constructor secundario público
     constructor(nombre: String) : this(nombre, 0.0) {
