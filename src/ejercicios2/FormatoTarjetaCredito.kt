@@ -15,6 +15,18 @@ retorna "Tarjeta inválida".
 - Salida: String
 */
 
+fun formatearTarjeta(tarjeta: String): String {
+    val tarjetaLimpia = tarjeta.replace("-", "").replace(" ", "")
+
+    if (tarjetaLimpia.length != 16) return "Tarjeta inválida"
+    if (tarjetaLimpia.any { it.isLetter() }) return "Tarjeta inválida"
+
+    val tarjetaDividida = tarjetaLimpia
+        .chunked(4)
+        .joinToString("-")
+    return tarjetaDividida
+}
+
 fun main() {
     println(formatearTarjeta("1234567812345678"))      // 1234-5678-1234-5678
     println(formatearTarjeta("1234 5678 1234 5678"))   // 1234-5678-1234-5678
