@@ -1,25 +1,36 @@
 package b_Ejercicios_lambdas
 
-fun fibonacci(n: Int): Long {
-    if (n <= 0) {
-        return 0L
-    } else if (n == 1) {
-        return 1L
+/**
+ * EJERCICIO 7: Closures - Capturando Variables Externas
+ *
+ * Crea una función que retorne otra función (lambda).
+ * La lambda retornada debe "recordar" un contador que se incrementa
+ * cada vez que se llama.
+ *
+ * Esto demuestra que las lambdas pueden capturar variables del scope externo.
+ */
+
+fun crearContador(): () -> Int {
+    // Tu código aquí
+    // Crea una variable contador
+    // Retorna una lambda que incremente y retorne el contador
+
+    var contador = 0
+    return {
+        contador += 1
+        contador
     }
-
-    var a: Long = 0L
-    var b: Long = 1L
-
-    for (i in 2..n) {
-        val nextTerm = a + b
-        a = b
-        b = nextTerm
-    }
-
-    return b
 }
 
 fun main() {
-    val position = 10 // Puedes cambiar este valor para calcular otro término de la secuencia
-    println("El ${position}-ésimo término de la secuencia de Fibonacci es: ${fibonacci(position)}")
+    val contador1 = crearContador()
+
+    println(contador1())  // 1
+    println(contador1())  // 2
+    println(contador1())  // 3
+
+    val contador2 = crearContador()
+
+    println(contador2())  // 1
+    println(contador2())  // 2
 }
